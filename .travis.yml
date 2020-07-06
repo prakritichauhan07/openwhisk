@@ -77,7 +77,7 @@ jobs:
         - ./tools/travis/checkAndUploadLogs.sh unit db
       arch: amd64  
       name: "Unit Tests"
-     - script:
+    - script:
         - ./tools/travis/runUnitTests.sh
         - ./tools/travis/checkAndUploadLogs.sh unit db
       arch: arm64  
@@ -108,8 +108,8 @@ jobs:
       arch: amd64  
       name: "Standalone Tests"
     - script:
-      - ./tools/travis/runStandaloneTests.sh
-      - ./tools/travis/checkAndUploadLogs.sh standalone
+        - ./tools/travis/runStandaloneTests.sh
+        - ./tools/travis/checkAndUploadLogs.sh standalone
       arch: arm64  
       name: "Standalone Tests"  
     - script:
