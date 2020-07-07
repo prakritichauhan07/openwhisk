@@ -35,8 +35,10 @@ sudo apt-key fingerprint 0EBFCD88
 # This is required because libseccomp2 (>= 2.3.0) is not provided in trusty by default
 sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
 
+#sudo add-apt-repository \
+#    "deb [arch=$(uname -m | sed -e 's/x86_64/amd64/g')] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo add-apt-repository \
-    "deb [arch=$(uname -m | sed -e 's/x86_64/amd64/g')] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 sudo apt-get update
 sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker-ce=18.06.3~ce~3-0~ubuntu containerd.io
