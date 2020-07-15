@@ -35,7 +35,7 @@ sudo apt-key fingerprint 0EBFCD88
 # This is required because libseccomp2 (>= 2.3.0) is not provided in trusty by default
 sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
 
-if [ "${TRAVIS_CPU_ARCH}" == "arm64" ]; then
+if [ "${TRAVIS_CPU_ARCH}" == "amd64" ]; then
 sudo add-apt-repository \
     "deb [arch=$(uname -m | sed -e 's/x86_64/amd64/g')] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable";
 else
@@ -48,7 +48,7 @@ sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker-
 # daemon.json and flags does not work together. Overwritting the docker.service file
 # to remove the host flags. - https://docs.docker.com/config/daemon/#troubleshoot-conflicts-between-the-daemonjson-and-startup-scripts
 echo "DONE!111111111111111"
-sudo chmod 777 /var/run/docker.sock
+#sudo chmod 777 /var/run/docker.sock
 echo "DONE4444444444444444444444444"
 sudo mkdir -p /etc/systemd/system/docker.service.d
 echo "DONE3333333333333333333333333"
