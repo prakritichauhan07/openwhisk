@@ -62,7 +62,7 @@ sudo cat /etc/docker/daemon.json
 echo "DONE666666666666666666666"
 sudo systemctl daemon-reload
 echo "DONE*******************"
-sudo systemctl restart docker
+systemctl restart docker
 echo "DONE777777777777777777"
 sudo systemctl status docker.service
 echo "Docker Version:"
