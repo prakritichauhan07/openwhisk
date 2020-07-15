@@ -44,14 +44,22 @@ sudo apt-get update
 sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker-ce=18.06.3~ce~3-0~ubuntu containerd.io
 # daemon.json and flags does not work together. Overwritting the docker.service file
 # to remove the host flags. - https://docs.docker.com/config/daemon/#troubleshoot-conflicts-between-the-daemonjson-and-startup-scripts
+echo "DONE!111111111111111"
 sudo chmod 777 /var/run/docker.sock
+echo "DONE4444444444444444444444444"
 sudo mkdir -p /etc/systemd/system/docker.service.d
+echo "DONE3333333333333333333333333"
 sudo cp $BASEDIR/docker.conf /etc/systemd/system/docker.service.d/docker.conf
 # setup-docker will add configs to /etc/docker/daemon.json
+echo "DONE222222222222222222222222"
 sudo python $BASEDIR/setup-docker.py
+echo "DONE5555555555555555555555"
 sudo cat /etc/docker/daemon.json
+echo "DONE666666666666666666666"
 sudo systemctl daemon-reload
+echo "DONE*******************"
 sudo systemctl restart docker
+echo "DONE777777777777777777"
 sudo systemctl status docker.service
 echo "Docker Version:"
 docker version
