@@ -48,6 +48,7 @@ sudo apt-get -o Dpkg::Options::="--force-confold" --force-yes -y install docker-
 # daemon.json and flags does not work together. Overwritting the docker.service file
 # to remove the host flags. - https://docs.docker.com/config/daemon/#troubleshoot-conflicts-between-the-daemonjson-and-startup-scripts
 echo "DONE!111111111111111"
+ls -l /var/run/docker.sock
 #sudo chmod 777 /var/run/docker.sock
 echo "DONE4444444444444444444444444"
 sudo mkdir -p /etc/systemd/system/docker.service.d
